@@ -25,12 +25,13 @@ router.post('/', (req, res) => {
 
 
 
-router.put('/id', ( req, res ) => {
-    let idToUpdate = req.params
+router.put('/:id', ( req, res ) => {
+    let idToUpdate = req.params.id
     let boughtStatus =  req.body.bought
+    console.log(boughtStatus);
 
     let sqlQuery =`
-        UPDATE "shopping"
+        UPDATE "shoppingList"
             SET "bought" = $1
             WHERE "id" = $2
     `
