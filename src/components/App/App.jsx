@@ -5,6 +5,22 @@ import './App.css';
 
 
 function App() {
+
+    // POST
+    const addItem = () => {
+        axios.post('/shopping',
+            {
+                name: newName,
+                quantity: newQuantity,
+                unit: newUnit
+            }
+        ).then(response => {
+            console.log('response:', response)
+        }).catch(error => {
+            console.log('Error in POST client', error)
+        })
+    }
+
     return (
         <div className="App">
             <Header />
