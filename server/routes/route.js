@@ -23,7 +23,24 @@ router.post('/', (req, res) => {
     })
 })
 
-
+router.delete("/:id", (req, res) => {
+    console.log(req.params);
+    let idToDelete = req.params.id;
+    let sqlQuery = `
+            DELETE FROM "shoppingList"
+            WHERE "id"=$1
+          `;
+    let sqlValues = [idToDelete];
+    pool
+      .query(sqlQuery, sqlValues)
+      .then((dbRes) => {
+        res.sendStatus(200);
+      })
+      .catch((dbErr) => {
+        console.log("broke in Delete route", dbErr);
+      });
+  });
+  
 
 router.put('/:id', ( req, res ) => {
     let idToUpdate = req.params.id

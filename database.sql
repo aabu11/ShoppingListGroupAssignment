@@ -13,4 +13,4 @@ INSERT INTO "shoppingList"
 	('Cole', '5', 'logs'),
 	('Connor', '6', 'computers');
 
--- It is also helpful to include some test data
+-- It is also helpful to include some test 
