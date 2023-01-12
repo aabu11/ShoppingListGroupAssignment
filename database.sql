@@ -1,9 +1,9 @@
 -- Don't forget to add your create table SQL 
 CREATE TABLE "shoppingList" (
   "id" SERIAL PRIMARY KEY,
-  "name" VARCHAR(80),
-  "quantity" numeric(10,2),
-  "unit" VARCHAR(20),
+  "name" VARCHAR(80) NOT NULL,
+  "quantity" numeric(10,2) NOT NULL,
+  "unit" VARCHAR(20) NOT NULL,
   "bought" BOOLEAN DEFAULT FALSE
 );
 
