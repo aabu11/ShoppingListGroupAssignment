@@ -1,0 +1,21 @@
+#shoppingTitl{
+    transform: translate(10px, 10px);
+}
+#resetBtn{
+    transform: translate(50px, -70px);
+}
+#clearBtn{
+    transform: translate(80px, -70px);
+    size: 10px;
+
+}
+#shoppingTitle{
+    font-size: 50px;
+}
+.shoppingList{
+    border: 3px;
+    border-style:solid;
+    display:inline-block;
+    transform: translate(-30px,50px);
+    width:100px;
+}
