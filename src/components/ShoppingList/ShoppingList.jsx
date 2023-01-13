@@ -1,5 +1,21 @@
+
+import axios from 'axios';
 import './ShoppingList.css';
+import React from "react";
 function ShoppingList(props){
+  
+        const handleBuyClick = (event) => {
+            let id = event.currentTarget.id
+            axios.put(`/shopping/${id}`, 
+                    {
+                        bought: true
+                    }).then((response) => {
+                        props.getShoppingList()
+                    }).catch(err => { 
+                        console.log(err);
+                    });
+        }
+    
         return(
             <>
                 <div>
@@ -11,7 +27,7 @@ function ShoppingList(props){
                             <div>{shopping.name}</div>
                             <div>{String(shopping.quantity)}</div>
                             <div>{shopping.unit}</div>
-                            {shopping.bought ? <div>Bought</div> : <button>Buy</button>}
+                            {shopping.bought ? <div>Bought</div> : <button id={shopping.id} onClick = {handleBuyClick}>Buy</button>}
                             <button>Delete</button>
                         </div>
                     ))}

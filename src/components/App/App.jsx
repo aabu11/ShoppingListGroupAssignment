@@ -64,7 +64,7 @@ function App() {
                 <p>Under Construction...</p>
             </main>
             <>
-                {shoppingList && <ShoppingList shoppingList={shoppingList}/>}
+                {shoppingList && <ShoppingList getShoppingList={getShoppingList} shoppingList={shoppingList}/>}
             </> 
         </div>
     );
