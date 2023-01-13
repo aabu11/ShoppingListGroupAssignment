@@ -49,7 +49,7 @@ function App() {
         <div className="App">
             <Header />
             <Form getShoppingList={getShoppingList}/>
-            <ShoppingList shoppingList={shoppingList} />
+            <ShoppingList getShoppingList={getShoppingList} shoppingList={shoppingList} />
         </div>
     );
 }
