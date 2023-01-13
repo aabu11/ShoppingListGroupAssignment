@@ -49,6 +49,7 @@ function App() {
         <div className="App">
             <Header />
             <Form getShoppingList={getShoppingList}/>
+            
             <ShoppingList getShoppingList={getShoppingList} shoppingList={shoppingList} />
         </div>
     );
