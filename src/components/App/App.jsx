@@ -3,6 +3,8 @@ import axios from 'axios';
 import React from 'react';
 import Header from '../Header/Header.jsx'
 import ShoppingList from '../ShoppingList/ShoppingList.jsx'
+import ResetButton from '../ResetButton/ResetButton.jsx'
+import ClearButton from '../ClearButton/ClearButton.jsx'
 import './App.css';
 
 
@@ -63,6 +65,11 @@ function App() {
             <main>
                 <p>Under Construction...</p>
             </main>
+            <h1 id='shoppingTitle'>Shopping List</h1>
+                <h2>
+                    <ResetButton getShoppingList={getShoppingList} className='clearandresetbtns'/>
+                    <ClearButton getShoppingList={getShoppingList} className='clearandresetbtns'/>
+                </h2>
             <>
                 {shoppingList && <ShoppingList shoppingList={shoppingList}/>}
             </> 
