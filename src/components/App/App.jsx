@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import React from 'react';
 import Header from '../Header/Header.jsx'
+import Form from '../Form/Form.jsx';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx'
 import ResetButton from '../ResetButton/ResetButton.jsx'
 import ClearButton from '../ClearButton/ClearButton.jsx'
@@ -10,7 +11,7 @@ import './App.css';
 
 
 function App() {
-    let [shoppingList, setShoppingList] = useState('');
+    let [shoppingList, setShoppingList] = useState([]);
     useEffect(() => {
         getShoppingList()
       }, [])
@@ -29,20 +30,7 @@ function App() {
           })
       }
 
-    // POST
-    const addItem = () => {
-        axios.post('/shopping',
-            {
-                name: newName,
-                quantity: newQuantity,
-                unit: newUnit
-            }
-        ).then(response => {
-            console.log('response:', response)
-        }).catch(error => {
-            console.log('Error in POST client', error)
-        })
-    }
+    // POST route is in Form.jsx
     
     // DELETE
     function deleteItem (e){
@@ -62,17 +50,11 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <main>
-                <p>Under Construction...</p>
-            </main>
-            <h1 id='shoppingTitle'>Shopping List</h1>
-                <h2>
-                    <ResetButton getShoppingList={getShoppingList} className='clearandresetbtns'/>
-                    <ClearButton getShoppingList={getShoppingList} className='clearandresetbtns'/>
-                </h2>
-            <>
-                {shoppingList && <ShoppingList shoppingList={shoppingList}/>}
-            </> 
+            <Form getShoppingList={getShoppingList}/>
+            <h2 id='shoppingTitle'>Shopping List</h2>
+            <ResetButton getShoppingList={getShoppingList} className='clearandresetbtns'/>
+            <ClearButton getShoppingList={getShoppingList} className='clearandresetbtns'/>
+            <ShoppingList getShoppingList={getShoppingList} shoppingList={shoppingList} />
         </div>
     );
 }

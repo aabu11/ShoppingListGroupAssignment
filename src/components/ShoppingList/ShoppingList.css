@@ -1,6 +1,26 @@
+/* #shoppingTitl{
+    transform: translate(10px, 10px);
+}
+#resetBtn{
+    transform: translate(50px, -70px);
+}
+#clearBtn{
+    transform: translate(80px, -70px);
+    size: 10px;
+
+} */
+#shoppingTitle{
+    font-size: 30px;
+}
+
 .shoppingList{
-    border: 3px;
-    border-style:solid;
+    border: 1px solid black;
     display:inline-block;
+    margin: 10px;
     width:100px;
-} 
+}
+
+p {
+    text-align: center;
+}
+
