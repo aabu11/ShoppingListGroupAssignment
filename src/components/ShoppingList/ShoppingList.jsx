@@ -17,12 +17,6 @@ function ShoppingList({ shoppingList, getShoppingList }) {
     return (
         <>
             <div>
-                <h2 id='shoppingTitle'>Shopping List</h2>
-                <button id='resetBtn'>Reset</button>
-                <button id='clearBtn'>Clear</button>
-            </div>
-            <br />
-            <div>
                 {shoppingList.map(shopping => (
                     <div className='shoppingList' key={shopping.id}>
                         <p>{shopping.name}</p>
