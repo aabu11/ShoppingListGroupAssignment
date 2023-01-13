@@ -30,21 +30,6 @@ function App() {
           })
       }
 
-    // POST route is in Form.jsx
-    
-    // DELETE
-    function deleteItem (e){
-      const id = this.state.id;
-      e.preventDefault();
-      axios.delete('/shopping')
-        .then(res => {
-            console.log(res.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-
-
 }
 
     return (
@@ -58,5 +43,4 @@ function App() {
         </div>
     );
 }
-
 export default App;

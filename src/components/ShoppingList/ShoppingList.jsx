@@ -14,6 +14,14 @@ function ShoppingList({ shoppingList, getShoppingList }) {
                 console.log(err);
             });
     }
+    function deletePost(event) {
+    axios
+      .delete(`/shopping/${event.currentTarget.id}`)
+      .then(() => {
+        props.getShoppingList();
+        alert("Item deleted!");
+      });
+  }
     return (
         <>
             <div>
@@ -23,7 +31,7 @@ function ShoppingList({ shoppingList, getShoppingList }) {
                         <p>{String(shopping.quantity)}</p>
                         <p>{shopping.unit}</p>
                         {shopping.bought ? <p id="boughtText">Bought</p> : <button id={shopping.id} onClick={handleBuyClick}>Buy</button>}
-                        <button>Delete</button>
+                        <button id={shopping.id} onClick={deletePost}>Delete</button>
                     </div>
                 ))}
             </div>
