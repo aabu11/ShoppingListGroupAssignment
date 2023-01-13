@@ -1,17 +1,21 @@
 import './ShoppingList.css';
-function ShoppingList(props){
+
+function ShoppingList({shoppingList}){
         return(
             <>
                 <div>
-                    <div id='shoppingTitle'>Shopping List</div>
+                    <h2 id='shoppingTitle'>Shopping List</h2>
                     <button id='resetBtn'>Reset</button>
                     <button id='clearBtn'>Clear</button>
-                    {props.shoppingList.map(shopping => (
+                </div>
+                <br/>
+                <div>
+                    {shoppingList.map(shopping => (
                         <div className='shoppingList' key={shopping.id}>
-                            <div>{shopping.name}</div>
-                            <div>{String(shopping.quantity)}</div>
-                            <div>{shopping.unit}</div>
-                            {shopping.bought ? <div>Bought</div> : <button>Buy</button>}
+                            <p>{shopping.name}</p>
+                            <p>{String(shopping.quantity)}</p>
+                            <p>{shopping.unit}</p>
+                            {shopping.bought ? <p>Bought</p> : <button>Buy</button>}
                             <button>Delete</button>
                         </div>
                     ))}

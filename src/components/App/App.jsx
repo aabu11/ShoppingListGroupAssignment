@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import React from 'react';
 import Header from '../Header/Header.jsx'
+import Form from '../Form/Form.jsx';
 import ShoppingList from '../ShoppingList/ShoppingList.jsx'
 import './App.css';
 
 
 
 function App() {
-    let [shoppingList, setShoppingList] = useState('');
+    let [shoppingList, setShoppingList] = useState([]);
     useEffect(() => {
         getShoppingList()
       }, [])
@@ -27,20 +28,7 @@ function App() {
           })
       }
 
-    // POST
-    const addItem = () => {
-        axios.post('/shopping',
-            {
-                name: newName,
-                quantity: newQuantity,
-                unit: newUnit
-            }
-        ).then(response => {
-            console.log('response:', response)
-        }).catch(error => {
-            console.log('Error in POST client', error)
-        })
-    }
+    // POST route is in Form.jsx
     
     // DELETE
     function deleteItem (e){
@@ -60,12 +48,8 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <main>
-                <p>Under Construction...</p>
-            </main>
-            <>
-                {shoppingList && <ShoppingList shoppingList={shoppingList}/>}
-            </> 
+            <Form getShoppingList={getShoppingList}/>
+            <ShoppingList shoppingList={shoppingList} />
         </div>
     );
 }
