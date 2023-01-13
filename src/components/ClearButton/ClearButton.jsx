@@ -9,9 +9,9 @@ function ClearButton(props){
         })
     }
     return (
-    <p>
-        <button onClick={clearAll} id='clearBtn'>Clear</button>
-    </p>
+        <>
+            <button onClick={clearAll} id='clearBtn'>Clear</button>
+        </>
     )
 }
 export default ClearButton;

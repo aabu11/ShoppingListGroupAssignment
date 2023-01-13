@@ -9,9 +9,9 @@ function ResetButton(props){
         })
     }
     return (
-        <p>
+        <>
             <button onClick={resetAll} id='resetBtn'>Reset</button>
-        </p>
+        </>
     )
 }
 export default ResetButton;
