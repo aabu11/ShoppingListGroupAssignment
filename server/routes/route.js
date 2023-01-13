@@ -4,6 +4,20 @@ const pool = require('../modules/pool.js');
 
 // WHERE WE PUT OUR ROUTES
 
+// GET
+router.get('/', (req, res) => {
+    const sqlQuery = `SELECT * FROM "shoppingList" ORDER BY "name" ASC;`;
+    pool.query(sqlQuery)
+        .then((result) => {
+            console.log(`Got stuff back from the database`, result);
+            res.send(result.rows);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlQuery}`, error);
+            res.sendStatus(500); // Good server always responds
+        })
+})
+
 // POST
 router.post('/', (req, res) => {
   const newItem = req.body;
@@ -23,6 +37,7 @@ router.post('/', (req, res) => {
     })
 })
 
+// DELETE
 router.delete("/:id", (req, res) => {
     console.log(req.params);
     let idToDelete = req.params.id;
@@ -41,7 +56,7 @@ router.delete("/:id", (req, res) => {
       });
   });
   
-
+// PUT
 router.put('/:id', ( req, res ) => {
     let idToUpdate = req.params.id
     let boughtStatus =  req.body.bought
