@@ -2,3 +2,8 @@ main {
   width: 90%;
   margin: auto;
 }
+.clearandresetbtns{
+  margin: auto;
+  display:inline-block;
+  color:red;
+}

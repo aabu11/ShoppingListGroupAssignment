@@ -1,4 +1,4 @@
-#shoppingTitl{
+/* #shoppingTitl{
     transform: translate(10px, 10px);
 }
 #resetBtn{
@@ -8,14 +8,19 @@
     transform: translate(80px, -70px);
     size: 10px;
 
-}
+} */
 #shoppingTitle{
-    font-size: 50px;
+    font-size: 30px;
 }
+
 .shoppingList{
-    border: 3px;
-    border-style:solid;
+    border: 1px solid black;
     display:inline-block;
-    transform: translate(-30px,50px);
+    margin: 10px;
     width:100px;
 }
+
+p {
+    text-align: center;
+}
+
