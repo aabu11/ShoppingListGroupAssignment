@@ -29,10 +29,8 @@ function App() {
             console.log(err);
           })
       }
-
-}
-
-    return (
+      
+      return (
         <div className="App">
             <Header />
             <Form getShoppingList={getShoppingList}/>
@@ -43,4 +41,7 @@ function App() {
         </div>
     );
 }
+
+    
+
 export default App;

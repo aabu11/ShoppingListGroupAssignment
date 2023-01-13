@@ -18,7 +18,7 @@ function ShoppingList({ shoppingList, getShoppingList }) {
     axios
       .delete(`/shopping/${event.currentTarget.id}`)
       .then(() => {
-        props.getShoppingList();
+        getShoppingList();
         alert("Item deleted!");
       });
   }
